@@ -1,0 +1,17 @@
+#!/bin/sh
+# ====================================
+# Credit Simulator launcher script
+# Compatible with Linux & MacOS
+# ====================================
+
+# Jalankan dari direktori root
+cd "$(dirname "$0")"
+
+# Jika ada argumen (file input)
+if [ $# -eq 1 ]; then
+    echo "=== Mode File Input ==="
+    java -jar target/credit_simulator-1.0-SNAPSHOT.jar "$1"
+else
+    echo "=== Mode Interactive ==="
+    java -jar target/credit_simulator-1.0-SNAPSHOT.jar
+fi
