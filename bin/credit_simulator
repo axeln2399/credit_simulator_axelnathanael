@@ -1,0 +1,17 @@
+#!/bin/sh
+# ====================================
+# Credit Simulator launcher script
+# Compatible with Linux & MacOS
+# ====================================
+
+# Move to app directory
+cd /app
+
+# If user provides a file input argument
+if [ $# -eq 1 ]; then
+    echo "=== Mode File Input ==="
+    java -jar credit_simulator.jar "$1"
+else
+    echo "=== Mode Interactive ==="
+    java -jar credit_simulator.jar
+fi
