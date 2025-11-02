@@ -3,18 +3,10 @@
     {
       "vehicleType": "Mobil",
       "vehicleCondition": "Baru",
-      "loanAmount": 100000000,
-      "downPayment": 25000000,
+      "loanAmount": 1000000000,
+      "downPayment": 500000000,
       "rate": 8.0,
-      "tenure": 3
-    },
-    {
-      "vehicleType": "Motor",
-      "vehicleCondition": "Bekas",
-      "loanAmount": 50000000,
-      "downPayment": 17500000,
-      "rate": 9.0,
-      "tenure": 3
+      "tenure": 6
     }
   ]
 }

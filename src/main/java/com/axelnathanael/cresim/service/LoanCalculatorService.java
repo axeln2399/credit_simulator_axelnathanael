@@ -51,11 +51,12 @@ public class LoanCalculatorService {
     private BigDecimal computeRate(BigDecimal baseRate, int year) {
         if (year == 1) return baseRate;
 
-        BigDecimal rate = baseRate.add(ANNUAL_INCREMENT); // add 0.1% at year >= 2
-        int biennialBlocks = (year - 1) / 2; // year3 -> 1, year4 ->1, year5 ->2...
-        if (biennialBlocks > 0) {
-            rate = rate.add(BIENNIAL_INCREMENT.multiply(BigDecimal.valueOf(biennialBlocks)));
-        }
-        return rate;
+        int countAnnual = year / 2;
+        int countBiennial = (year - 1) / 2;
+
+        BigDecimal annualTotal = ANNUAL_INCREMENT.multiply(BigDecimal.valueOf(countAnnual));
+        BigDecimal biennialTotal = BIENNIAL_INCREMENT.multiply(BigDecimal.valueOf(countBiennial));
+
+        return baseRate.add(annualTotal).add(biennialTotal);
     }
 }
